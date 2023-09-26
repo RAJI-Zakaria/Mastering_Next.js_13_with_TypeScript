@@ -80,3 +80,51 @@ Example : create a test.css inside the users folder
 Adding a simple anchor `<a href="/users"></a>` is not a good idea because the browser will reload multiple files that had been downloaded before (check the Network on your navigator F12).
 
 As a result, in order to enhance navigation performance it's mandatory to use the link component `next/link` library : `<Link href="/users"></Link>` instead.
+
+# Client and Server components
+
+Rendering Environments can be :
+
+- Client : Web Browser
+- Server : Node.js runtime
+
+## Client-side Rendering
+
+- Large Bundles (the larger the bundle the more resources will be consumed on the client side)
+- Resource intensive
+- No SEO
+- Less secure
+
+## Server-side Rendering
+
+- Smaller Bundles
+- Resource efficient
+- SEO
+- More secure
+- BUT we lose `interactivity`
+
+CANNOT :
+
+- Listen to browser events
+- access browser applications
+- Maintain state
+- use effects
+
+Example : in a products webpage, we can find all products with description and image and button to add to card as well as the other elements (header, footer...)
+
+- server Side :
+  - NavBar
+  - SideBar
+  - ProductList
+  - ProductCard
+  - Pagination
+  - Footer
+- Client Side :
+  - AddToCart
+
+Note : all components/pages/content are server side by default.
+
+-- How to make a component client side ?
+
+- use the client directive `'use client';` on the top of your component
+- if a component is 'client' then all sub components will be considered as client side.
