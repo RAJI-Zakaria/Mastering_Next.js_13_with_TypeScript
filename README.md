@@ -57,3 +57,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 `/utils` helper functions
 
 Configuration files `tsconfig.json`, `next.config.js`...
+
+# Routing and Navigation
+
+## The route system is based on convention not configuration
+
+Example : create a route users
+
+- Create a folder `users`
+- Create page.{ts,tsx,js,jsx} inside the users folder
+
+## Only the page.tsx will be accessible in `/users`
+
+Example : create a test.css inside the users folder
+
+- navigate to localhost:3000/users/test.css
+  - it will show error not found.
+  - the new route system is much more robust.
+
+## Best practice for Anchors & navigation
+
+Adding a simple anchor `<a href="/users"></a>` is not a good idea because the browser will reload multiple files that had been downloaded before (check the Network on your navigator F12).
+
+As a result, in order to enhance navigation performance it's mandatory to use the link component `next/link` library : `<Link href="/users"></Link>` instead.
