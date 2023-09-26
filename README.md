@@ -128,3 +128,27 @@ Note : all components/pages/content are server side by default.
 
 - use the client directive `'use client';` on the top of your component
 - if a component is 'client' then all sub components will be considered as client side.
+
+# Data Fetching
+
+Client or Server side
+
+## Fetching on the client
+
+- useState() + useEffect()
+- React Query
+  Problems :
+
+* Large Bundles
+* Resource intensive
+* No SEO
+* Less secure (API keys on client side)
+* Extra roundtrip to server
+
+solution :
+
+- pre-fetch data on the server and render it to get rid of all these problems.
+
+### Dummy Data : `jsonplaceholder.typicode.com`
+
+to fetch data we can use fetch function : fetch(URL);
