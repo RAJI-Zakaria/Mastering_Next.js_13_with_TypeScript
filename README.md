@@ -41,3 +41,19 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Project Structure
+
+`/app` container for our router system (create files and folder representing our routes)
+
+`/components` reusable components
+
+`/pages` pages of our app
+
+`/public` static files like images
+
+`/styles` global styles
+
+`/utils` helper functions
+
+Configuration files `tsconfig.json`, `next.config.js`...
