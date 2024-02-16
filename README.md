@@ -182,3 +182,21 @@ To  disable caching i am adding `cache: "no-store"` to the fetch request.
 # Styles : Tailwind, DaisyUI
 - To make my coding journey "frontend" easier I will be using DaisyUI which is a component library built on top of Tailwind. It provides a collection of pre-designed and reusable components such as accordion, badge, card, etc.
 - DaisyUI has multiple themes, highly recommend you to check out the online Docs.
+
+
+# Routing and Navigation
+Nextjs has its own  way to handle routing `Next.js Router`.
+You don't need to import any external library like React Router Dom.
+All you need to do is to create new folders under the app directory, and then you must create a page.[tsx] file inside it. 
+
+This is going to generate new Path to your page :
+- /app/users/page.tsx ===> yourwebsite.com/users 
+- /app/users/[id]/page.tsx ===>  yourwebsite.com/users/1
+
+of course there are other special files that you can use other than page.[tsx] : 
+- page.tsx
+- layout.tsx
+- loading.tsx
+- route.tsx
+- not-found.tsx
+- error.tsx

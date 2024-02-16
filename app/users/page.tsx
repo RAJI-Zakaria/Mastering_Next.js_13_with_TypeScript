@@ -1,4 +1,5 @@
 import React from 'react'
+import UsersTable from '../components/user/UserTable'
 
 interface User {
   id: number
@@ -17,11 +18,7 @@ const UsersPage = async () => {
     <>
       <h1>Users</h1>
       <p>{new Date().toLocaleTimeString()}</p>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
+      <UsersTable/>
     </>
   )
 }
