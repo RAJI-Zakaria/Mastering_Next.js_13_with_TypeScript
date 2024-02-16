@@ -3,7 +3,7 @@ import React from 'react'
 
 const AddToCart = () => {
   return (
-    <button onClick={() => alert('product added successfully')}>
+    <button className='p-5 my-5 bg-sky-400 text-white text-xl hover:bg-sky-700' onClick={() => alert('product added successfully')}>
       Add to cart
     </button>
   )
