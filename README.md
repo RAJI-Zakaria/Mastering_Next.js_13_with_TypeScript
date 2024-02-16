@@ -152,3 +152,19 @@ solution :
 ### Dummy Data : `jsonplaceholder.typicode.com`
 
 to fetch data we can use fetch function : fetch(URL);
+
+
+
+
+## Activate Caching
+using fetch function you can specify if you want to refetch data or used the cached one.
+
+`Note: of course if we are developing a realtime app then the cache should not be activated (Except some cases).`
+```
+const res = await fetch('http://jsonplaceholder.typicode.com/users',{
+    //cache: "no-cache",//disabling cache
+    next: {
+      revalidate: 10,//refetch only after 10 seconds
+    }
+  })
+```
