@@ -168,3 +168,13 @@ const res = await fetch('http://jsonplaceholder.typicode.com/users',{
     }
   })
 ```
+
+## Static Rendering 
+Static Site Generation (SSG): generate HTML at build time with static content that never changes.
+As i mentioned before we can use deactivate caching (cache activated by default `fetch`).
+
+- When i build i my component is static :`○  (Static)  automatically rendered as static HTML (uses no initial props)`
+
+To  disable caching i am adding `cache: "no-store"` to the fetch request.
+
+- Now my component is server-side rendered (at request time) : `λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)`
