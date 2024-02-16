@@ -178,3 +178,7 @@ As i mentioned before we can use deactivate caching (cache activated by default 
 To  disable caching i am adding `cache: "no-store"` to the fetch request.
 
 - Now my component is server-side rendered (at request time) : `λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)`
+
+# Styles : Tailwind, DaisyUI
+- To make my coding journey "frontend" easier I will be using DaisyUI which is a component library built on top of Tailwind. It provides a collection of pre-designed and reusable components such as accordion, badge, card, etc.
+- DaisyUI has multiple themes, highly recommend you to check out the online Docs.
