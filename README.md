@@ -244,5 +244,11 @@ const sortedUsers = sort(users).asc(
 
 
 # Programmatic Navigation
-- sometimes we need to navigate based on click actions...
-- we need to use 
+- sometimes we need to navigate based on click actions... Ex : sending forms...
+
+# Loading
+- we can wrap components inside a Suspense component with fallback.
+- or, under the app directory we can create loading.tsx file that will be shown incase of loading data/pages...
+
+# React Developer Tools
+- Debugging tool for react apps. It shows the Virtual DOM tree which helps us understand how React renders our app.
