@@ -227,3 +227,7 @@ const sortedUsers = sort(users).asc(
 );
 ```
 - And that's all! isn't it easy peasy lemon squeezy
+
+# Layouts 
+- As previously mentioned, special files like layouts serve as a fundamental structure for our application. 
+- A layout acts as a template or container, defining a consistent structure for each page within our app.
