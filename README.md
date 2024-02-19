@@ -242,3 +242,7 @@ const sortedUsers = sort(users).asc(
 - ===> Thats why Nextjs is Fast, isn't that soo COOOOL !! :) 
 - Note : if you are not convinced yet, you can simply check your network tab in developer tools.
 
+
+# Programmatic Navigation
+- sometimes we need to navigate based on click actions...
+- we need to use 
