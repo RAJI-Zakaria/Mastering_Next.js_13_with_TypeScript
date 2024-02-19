@@ -200,3 +200,30 @@ of course there are other special files that you can use other than page.[tsx] :
 - route.tsx
 - not-found.tsx
 - error.tsx
+
+# Query & segments parameters 
+- Fetching data and sorting it is a paramount task to have a great interactive interface.
+- In NextJS you can access parameters from page only not component, to do so here is a little Demo : 
+  - Add parameters to your page 
+```
+const UsersPage = async ({searchParams: { sortOrder}}: Props) => {}
+```
+  - Don't forget to add the interface above 
+```
+interface Props{
+  sortOrder:string
+}
+```
+- Let's sort data using fast-sort
+```
+  import { sort } from 'fast-sort';
+```
+- now we have `sortOrder` query and list of users
+```
+const sortedUsers = sort(users).asc(
+    sortOrder==='email' 
+    ? user => user.email
+    : (user) => user.name
+);
+```
+- And that's all! isn't it easy peasy lemon squeezy
