@@ -231,3 +231,14 @@ const sortedUsers = sort(users).asc(
 # Layouts 
 - As previously mentioned, special files like layouts serve as a fundamental structure for our application. 
 - A layout acts as a template or container, defining a consistent structure for each page within our app.
+
+
+# Navigation
+- in Next js navigation is really cool because nextjs fetch the content of requested page only.
+- the idea is that NextJS is not going to reload other files that been cached. 
+- So if you navigate between pages quickly enough, you will notice that nothing happens on the screen. This means no HTTP requests are made.
+- The cache is based on session so it can erased by reloading the page.
+- Moreover, by using Link component NextJS load the content of the pages specified in Links (behind the scene).
+- ===> Thats why Nextjs is Fast, isn't that soo COOOOL !! :) 
+- Note : if you are not convinced yet, you can simply check your network tab in developer tools.
+

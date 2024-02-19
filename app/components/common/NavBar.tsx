@@ -13,32 +13,30 @@ const NavBar = () => {
             </svg>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><Link href="/">Item 1</Link></li>
+        <li><Link href="/products">Products</Link></li>
         <li>
-          <Link href="/">Parent</Link>
+          <Link href="/users">Users</Link>
           <ul className="p-2">
-            <li><Link href="/">Submenu 1</Link></li>
-            <li><Link href="/">Submenu 2</Link></li>
+            <li><Link href="/users?sortOrder=email">ordered by email</Link></li>
+            <li><Link href="/users?sortOrder=name">ordered by name</Link></li>
           </ul>
         </li>
-        <li><Link href="/">Item 3</Link></li>
       </ul>
     </div>
     <Link href="/"className="btn btn-ghost text-xl">daisyUI</Link>
   </div>
     <div className="navbar-center hidden lg:flex z-50">
         <ul className="menu menu-horizontal px-1">
-        <li><Link href="/">Item 1</Link></li>
+        <li><Link href="/products">Products</Link></li>
         <li>
             <details>
-            <summary>Parent</summary>
+            <summary>Users</summary>
             <ul className="p-2">
-                <li><Link href="/">Submenu 1</Link></li>
-                <li><Link href="/">Submenu 2</Link></li>
+                <li><Link href="/users?sortOrder=email">sorted by email</Link></li>
+                <li><Link href="/users?sortOrder=name">sorted by name</Link></li>
             </ul>
             </details>
         </li>
-        <li><Link href="/">Item 3</Link></li>
         </ul>
     </div>
     <div className="navbar-end">
