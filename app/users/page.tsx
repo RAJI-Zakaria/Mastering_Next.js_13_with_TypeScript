@@ -6,19 +6,17 @@ interface User {
   name: string
 }
 
-const UsersPage = async () => {
-  const res = await fetch('http://jsonplaceholder.typicode.com/users',{
-    cache: "no-store",//disabling cache
-    // next: {
-    //   revalidate: 10,//refetch only after 10 seconds
-    // }
-  })
-  const users: User[] = await res.json()
+interface Props {
+  searchParams: {sortOrder: string}
+}
+
+const UsersPage = async ({searchParams: { sortOrder}}: Props) => {
+  
   return (
     <>
       <h1>Users</h1>
       <p>{new Date().toLocaleTimeString()}</p>
-      <UsersTable/>
+      <UsersTable sortOrder={sortOrder}/>
     </>
   )
 }
