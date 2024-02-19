@@ -1,4 +1,4 @@
-## What is NextJS
+# What is NextJS
 
 Next JS is a framework for building fast and search-engine friendly applications
 it's build on React.
@@ -12,6 +12,8 @@ NextJS pillars :
   - write js that meant to be execute out of your browsers `server` side => Full-Stack DEV (learn once write everywhere).
 - Server-side rendering
 - Static Site generation
+
+# Table of Contents
 
 ## Setting up the development environment
 
@@ -262,3 +264,13 @@ router.push ('/')
 - This feature allows us to handle errors [effortlessly].
 - All you need to do is to create a page "error.tsx" or "not-found.tsx" and next js will do the rest for you.
 - Note : sometimes you want to throw error, you can use `(your condition == true) notFound()`, this will redirect 404 page.
+
+# Building API
+- building and api using node.js is pretty straight forward. but with Next JS new features, you can a build a clean and easy api with few minutes.
+- to create a resource 'users', all you need to do is to create a folder just like before, but please note that this time we must use `route.tsx` instead of `page.tsx`.
+- inside the router we can specify all verbs (GET, POST...) to manipulate data.
+- Note : to verify the data, you can use ZOD (M Mosh suggestion), but personally i use JOI  which is more familiar to me and also if we receive unwanted data in the body, joi will deny the request.
+- Coooool ;)
+
+
+
