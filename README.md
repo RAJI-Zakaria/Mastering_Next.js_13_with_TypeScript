@@ -193,7 +193,7 @@ This is going to generate new Path to your page :
 - /app/users/page.tsx ===> yourwebsite.com/users 
 - /app/users/[id]/page.tsx ===>  yourwebsite.com/users/1
 
-of course there are other special files that you can use other than page.[tsx] : 
+File Conventions : 
 - page.tsx
 - layout.tsx
 - loading.tsx
@@ -245,6 +245,10 @@ const sortedUsers = sort(users).asc(
 
 # Programmatic Navigation
 - sometimes we need to navigate based on click actions... Ex : sending forms...
+```
+const router = useRouter ();
+router.push ('/')
+```
 
 # Loading
 - we can wrap components inside a Suspense component with fallback.
@@ -252,3 +256,9 @@ const sortedUsers = sort(users).asc(
 
 # React Developer Tools
 - Debugging tool for react apps. It shows the Virtual DOM tree which helps us understand how React renders our app.
+
+# Not found & Error page
+- NextJs is smart enough to render a custom _error or not-found pages when there is no matching route or no data to show.
+- This feature allows us to handle errors [effortlessly].
+- All you need to do is to create a page "error.tsx" or "not-found.tsx" and next js will do the rest for you.
+- Note : sometimes you want to throw error, you can use `(your condition == true) notFound()`, this will redirect 404 page.
