@@ -291,3 +291,9 @@ await prisma.user.create({ data: { name: 'zak', email: 'zak@zkr.fr' } });
 await prisma.user.update({ where: { email: 'zak@zkr.fr' }, data: { email: 'zak@zkr.fr' } });
 
 ```
+
+# Uploading Files
+- sometimes we need to upload/store files on the cloud. We have multiple cloud platform providing services/solutions like Amazon S3, Azure, Cloudinary...
+- please follow the tutorial : 
+  - https://next.cloudinary.dev/installation
+  - https://console.cloudinary.com/

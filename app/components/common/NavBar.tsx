@@ -1,8 +1,11 @@
+'use client'
+import { useSession } from 'next-auth/react';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const NavBar = () => {
+  const {status, data:session} = useSession();
   return (
 <div className="navbar bg-base-100 ">
     <div className="navbar-start">
@@ -37,6 +40,7 @@ const NavBar = () => {
             </ul>
             </details>
         </li>
+
         </ul>
     </div>
     <div className="navbar-end">
@@ -58,21 +62,30 @@ const NavBar = () => {
         </div>
         </div>
         <div className="dropdown dropdown-end">
-        <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-            <Image width={40} height={40} alt="Tailwind CSS Navbar component" src="/avatar.webp" />
+
+        {status === 'unauthenticated' && <Link className='btn btn-primary' href="/api/auth/signin">Sign in</Link>}
+        {status === 'authenticated' && 
+        
+        <>
+           <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+              <Image width={40} height={40} alt="Tailwind CSS Navbar component" src="/avatar.webp" /> 
+              </div>
             </div>
-        </div>
-        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-            <Link href="/" className="justify-between">
-                Profile <span className="badge">New</span>
-            </Link>
-            </li>
-            <li><Link href="/">Settings</Link></li>
-            <li><Link href="/">Logout</Link></li>
-        </ul>
-        </div>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+              <Link href="/" className="justify-between">
+                  {session.user?.name} <span className="badge">Profile</span>
+              </Link>
+              </li>
+              <li><Link href="/">Settings</Link></li>
+              <li><Link href="/">Logout</Link></li>
+          </ul>
+        </>
+        
+        }
+         
+          </div>
     </div>
 </div>
   )
