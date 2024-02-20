@@ -272,5 +272,22 @@ router.push ('/')
 - Note : to verify the data, you can use ZOD (M Mosh suggestion), but personally i use JOI  which is more familiar to me and also if we receive unwanted data in the body, joi will deny the request.
 - Coooool ;)
 
+# Using Prisma
+- Prisma is an open-source database toolkit that makes working with databases easier. 
+- it's an ORM  (Object-Relational Mapping) that simplifies the process of working with databases.
+- Note : i Love Sequelize ORM more but it was nice to discover Prisma.
+- Commands : 
+  - `npx prisma` : See all commands
+  - `npx prisma format` : Beautify/format your schemas/models
+  - `npx prisma migrate dev` : migrate and create database tables...
+    - Note : `migration.sql` will be generated containing the SQL query based on your models.
+```
+await prisma.user. findMany();
 
+await prisma.user.findUnique({ where: { email: 'zak@zkr.fr' }});
 
+await prisma.user.create({ data: { name: 'zak', email: 'zak@zkr.fr' } });
+
+await prisma.user.update({ where: { email: 'zak@zkr.fr' }, data: { email: 'zak@zkr.fr' } });
+
+```
