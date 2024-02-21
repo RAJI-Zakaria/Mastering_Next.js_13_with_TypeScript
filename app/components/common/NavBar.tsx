@@ -6,6 +6,7 @@ import React from 'react'
 
 const NavBar = () => {
   const {status, data:session} = useSession();
+  
   return (
 <div className="navbar bg-base-100 ">
     <div className="navbar-start">
@@ -34,7 +35,7 @@ const NavBar = () => {
         <li>
             <details>
             <summary>Users</summary>
-            <ul className="p-2">
+            <ul className="w-max">
                 <li><Link href="/users?sortOrder=email">sorted by email</Link></li>
                 <li><Link href="/users?sortOrder=name">sorted by name</Link></li>
             </ul>
@@ -79,7 +80,7 @@ const NavBar = () => {
               </Link>
               </li>
               <li><Link href="/">Settings</Link></li>
-              <li><Link href="/">Logout</Link></li>
+              <li><Link href="/api/auth/signout">Logout</Link></li>
           </ul>
         </>
         
