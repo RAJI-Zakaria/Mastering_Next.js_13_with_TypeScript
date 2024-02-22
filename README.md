@@ -297,3 +297,43 @@ await prisma.user.update({ where: { email: 'zak@zkr.fr' }, data: { email: 'zak@z
 - please follow the tutorial : 
   - https://next.cloudinary.dev/installation
   - https://console.cloudinary.com/
+
+
+# Authentication
+- What a wonderful way of authentication, indeed splendid.
+- All the hard work is encapsulated (behind the scene), making it easy to implement an auth "Passport" system.
+- Implementing Different providers such as google, github... or even your own credentials (customized auth information email, password), is really clear and well structured.
+- thanks NextAuth.js
+- Setting Up Next auth
+```
+export const authOptions: NextAuthOptions = 1
+providers: [
+GoogleProvider ({
+clientId: process.env.GOOGLE_CLIENT_ID!, clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+})
+], adapter: PrismaAdapter(prisma),
+session: {
+strategy: 'jwt'
+}
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };
+```
+- Auto generated endpoints
+  - /api/auth/signin
+  - /api/auth/signout
+- Protecting Routes
+  - use middleware.ts at the root 
+```
+export { default } from 'next-auth/middleware';
+export const config = { matcher: ["/admin/:path*"] }
+```
+
+- Accessing the Session
+````
+// On the client
+const { data: session, status } = useSession();
+// On the server
+const session = await getServerSession(authOptions);
+````
+
+
