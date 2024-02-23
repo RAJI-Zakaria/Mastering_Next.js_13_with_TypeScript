@@ -6,7 +6,7 @@ export async function GET (request: NextRequest, {params}:{
     params: {id:string}
 }){
     const user = await prisma.user.findUnique({
-        where: {id: Number(params.id)}
+        where: {id: String(params.id)}
     });
 
     if(!user) return NextResponse.json({error: 'user not found'}, {status:404})
@@ -21,13 +21,13 @@ export async function PUT( request: NextRequest, {params}:{params:{id:string}}){
     if(!validation.success) return NextResponse.json(validation.error.errors, {status:400});
     
     const findUser = await prisma.user.findUnique({
-        where: {id: Number(params.id)}
+        where: {id: String(params.id)}
     });
     
     if(!findUser) return NextResponse.json({error: 'user not found'}, {status:404});
 
     const user = await prisma.user.update({
-        where: {id: Number(params.id)},
+        where: {id: String(params.id)},
         data: body
     });
     
@@ -36,13 +36,13 @@ export async function PUT( request: NextRequest, {params}:{params:{id:string}}){
 }
 
 
-export async function DELETE( request: NextRequest, {params}:{params:{id:number}}){
+export async function DELETE( request: NextRequest, {params}:{params:{id:string}}){
     const findUser = await prisma.user.findUnique({
-        where: {id: Number(params.id)}
+        where: {id: String(params.id)}
     });
     if(!findUser) return NextResponse.json({error: 'user not found'}, {status:404});
     await prisma.user.delete({
-        where: {id: Number(params.id)}
+        where: {id: String(params.id)}
     });
     return NextResponse.json({message: 'User deleted'});
 }

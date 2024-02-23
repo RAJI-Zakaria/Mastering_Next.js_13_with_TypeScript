@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import {Html, Body, Container, Text, Link, Preview} from '@react-email/components'
+import {Html, Body, Button, Tailwind, Container, Text, Preview} from '@react-email/components'
 
 const WelcomeTemplate = ({name}:{name:string}) => {
   return (
     <Html>
-        <Preview>Welcome aboard!</Preview>
-        <Body>
-            <Container>
-                <Text>
-                    Welcome aboard {name}! You have successfully registered to our platform.
-                </Text>
-                <Link href="zkr.fr">Visit our website</Link>
-            </Container>
-        </Body>
+        <Preview style={title}>Welcome aboard!</Preview>
+        <Tailwind>
+          <Body>
+              <Container>
+                  <Text>
+                      Welcome aboard {name}! You have successfully registered to our platform.
+                  </Text>
+                  <Button href="https://zkr.fr" className="btn btn-success">
+                    Click me
+                  </Button>              
+      </Container>
+          </Body>
+        </Tailwind>
     </Html>
   )
+}
+
+const title:CSSProperties = {
+  textAlign:'center',
+  fontSize:'22px'
 }
 
 export default WelcomeTemplate
