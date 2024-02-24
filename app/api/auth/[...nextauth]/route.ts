@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import { authOptions } from "../authOptions";
 
 // i m willing to add adapter but it is not working yet.
@@ -9,7 +9,7 @@ import { authOptions } from "../authOptions";
 
 
 
-const handler = NextAuth(authOptions as NextAuthOptions);
+const handler = NextAuth(authOptions);
 
 
 export { handler as GET, handler as POST };
