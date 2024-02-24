@@ -301,7 +301,7 @@ await prisma.user.update({ where: { email: 'zak@zkr.fr' }, data: { email: 'zak@z
 
 # Authentication
 - What a wonderful way of authentication, indeed splendid.
-- All the hard work is encapsulated (behind the scene), making it easy to implement an auth "Passport" system.
+- All the hard work is encapsulated (behind the scene), making it easier to implement an auth "Passport" system.
 - Implementing Different providers such as google, github... or even your own credentials (customized auth information email, password), is really clear and well structured.
 - thanks NextAuth.js
 - Setting Up Next auth
@@ -337,3 +337,9 @@ const session = await getServerSession(authOptions);
 ````
 
 
+
+
+
+# Deployment
+- Last but not least deployment was never as a easy as it is using vercel.
+- Big shout out to M Mosh for the 1 part of his course, you've done a great job explaining in details NextJS principals.
