@@ -6,6 +6,7 @@ import AuthProvider from './api/auth/Provider'
 import { ThemeProvider } from './components/daisy/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <SpeedInsights/>
         <ThemeProvider>
           <AuthProvider>
           <NavBar />
