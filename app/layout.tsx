@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavBar from './components/common/NavBar'
 import AuthProvider from './api/auth/Provider'
+import { ThemeProvider } from './components/daisy/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-        <NavBar />
-        <main className="px-8">{children}</main>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+          <NavBar />
+          <main className="px-8">{children}</main>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
